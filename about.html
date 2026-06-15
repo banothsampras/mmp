@@ -1,0 +1,1337 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us | Megha Mythri Projects LLP</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --gold: #f5db15;
+        --gold2: #f5db15;
+        --dark: #0c0c0c;
+        --dark2: #161616;
+        --dark3: #202020;
+        --dark4: #2a2a2a;
+        --white: #ffffff;
+        --gray: #909090;
+        --gray2: #c8c8c8;
+        --radius: 10px;
+      }
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+    body {
+        font-family: "Inter", sans-serif;
+        background: var(--dark);
+        color: var(--white);
+        overflow-x: hidden;
+      }
+      .hero-title,
+      .section-h,
+      .pcard-name,
+      .cta-h {
+        font-family: "Playfair Display", serif;
+      }
+      nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 999;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 60px;
+        height: 76px;
+        background: rgba(12, 12, 12, 0.97);
+        backdrop-filter: blur(16px);
+        border-bottom: 1px solid rgba(245, 168, 0, 0.12);
+      }
+      .nav-logo {
+        display: flex;
+        align-items: center;
+        gap: 13px;
+        text-decoration: none;
+      }
+      .logo-badge {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background: var(--gold);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Cormorant Garamond", serif;
+        font-weight: 900;
+        font-size: 15px;
+        color: #000;
+      }
+      .logo-text .t1 {
+        display: block;
+        font-family: "Cormorant Garamond", serif;
+        font-size: 17px;
+        font-weight: 700;
+        color: var(--white);
+        line-height: 1.2;
+      }
+      .logo-text .t2 {
+        display: block;
+        font-size: 10px;
+        color: var(--gold);
+        letter-spacing: 3px;
+        text-transform: uppercase;
+      }
+      .nav-links {
+        display: flex;
+        list-style: none;
+        gap: 34px;
+      }
+      .nav-links a {
+        color: var(--gray2);
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 500;
+        transition: color 0.2s;
+        position: relative;
+      }
+      .nav-links a::after {
+        content: "";
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 0;
+        height: 1px;
+        background: var(--gold);
+        transition: width 0.3s;
+      }
+      .nav-links a:hover,
+      .nav-links a.active {
+        color: var(--gold);
+      }
+      .nav-links a:hover::after,
+      .nav-links a.active::after {
+        width: 100%;
+      }
+      .nav-cta {
+        background: var(--gold);
+        color: #000;
+        border: none;
+        padding: 10px 26px;
+        font-family: "DM Sans", sans-serif;
+        font-weight: 700;
+        font-size: 13px;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: all 0.25s;
+      }
+      .nav-cta:hover {
+        background: var(--gold2);
+        transform: translateY(-1px);
+      }
+      .ham {
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+        background: none;
+        border: none;
+      }
+      .ham span {
+        width: 22px;
+        height: 2px;
+        background: var(--white);
+        display: block;
+      }
+
+      /* PAGE HERO */
+      .page-hero {
+        padding-top: 76px;
+        position: relative;
+        overflow: hidden;
+        min-height: 440px;
+        display: flex;
+        align-items: center;
+      }
+      .page-hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: url("https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1400&q=70")
+          center/cover;
+        opacity: 0.18;
+      }
+      .page-hero::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, transparent 40%, var(--dark) 100%);
+      }
+      .page-hero-inner {
+        position: relative;
+        z-index: 2;
+        padding: 80px 60px;
+        width: 100%;
+      }
+      .page-hero-inner .breadcrumb {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 13px;
+        color: var(--gray);
+        margin-bottom: 20px;
+      }
+      .breadcrumb a {
+        color: var(--gold);
+        text-decoration: none;
+      }
+      .breadcrumb span {
+        color: var(--gray);
+      }
+      .page-hero-inner h1 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(48px, 6vw, 80px);
+        font-weight: 900;
+        line-height: 1;
+        margin-bottom: 18px;
+      }
+      .page-hero-inner h1 .gold {
+        color: var(--gold);
+      }
+      .page-hero-inner p {
+        font-size: 17px;
+        color: var(--gray);
+        max-width: 560px;
+        line-height: 1.8;
+      }
+
+      /* SECTION */
+      .section {
+        padding: 100px 60px;
+      }
+      .section-tag {
+        font-size: 11px;
+        letter-spacing: 4px;
+        color: var(--gold);
+        text-transform: uppercase;
+        font-weight: 600;
+        margin-bottom: 14px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .section-tag::before {
+        content: "";
+        width: 32px;
+        height: 1px;
+        background: var(--gold);
+      }
+      .section-h {
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(34px, 4vw, 54px);
+        font-weight: 900;
+        line-height: 1.05;
+        margin-bottom: 18px;
+      }
+      .section-p {
+        font-size: 16px;
+        color: var(--gray);
+        line-height: 1.85;
+      }
+
+      /* STORY */
+      #story {
+        background: var(--dark2);
+      }
+      .story-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 90px;
+        align-items: center;
+      }
+      .story-imgs {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+      }
+      .story-imgs img {
+        width: 100%;
+        border-radius: var(--radius);
+        object-fit: cover;
+      }
+      .story-imgs img:first-child {
+        height: 300px;
+        grid-column: 1/-1;
+      }
+      .story-imgs img:last-child {
+        height: 180px;
+      }
+      .story-imgs .story-stat-box {
+        background: var(--gold);
+        border-radius: var(--radius);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 16px;
+      }
+      .ssb-num {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 38px;
+        font-weight: 900;
+        color: #000;
+        line-height: 1;
+      }
+      .ssb-lbl {
+        font-size: 10px;
+        font-weight: 700;
+        color: rgba(0, 0, 0, 0.7);
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        text-align: center;
+      }
+      .story-text .section-p {
+        margin-bottom: 18px;
+      }
+      .story-divider {
+        width: 50px;
+        height: 2px;
+        background: var(--gold);
+        margin: 24px 0;
+      }
+
+      /* CHAIRMAN */
+      #chairman {
+        background: var(--dark);
+      }
+      .chair-grid {
+        display: grid;
+        grid-template-columns: 1.1fr 1fr;
+        gap: 100px;
+        align-items: center;
+      }
+      .chair-img-wrap {
+        position: relative;
+      }
+      .chair-frame {
+        position: absolute;
+        inset: -16px;
+        border-radius: 18px;
+        border: 1px solid rgba(245, 168, 0, 0.2);
+        pointer-events: none;
+        z-index: 0;
+      }
+      .chair-img {
+        width: 100%;
+        border-radius: var(--radius);
+        position: relative;
+        z-index: 1;
+        display: block;
+        object-fit: cover;
+        height: 580px;
+      }
+      .chair-badge {
+        position: absolute;
+        bottom: -20px;
+        left: 30px;
+        background: var(--dark2);
+        border: 1px solid rgba(245, 168, 0, 0.3);
+        border-radius: 8px;
+        padding: 18px 24px;
+        z-index: 2;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+      .cb-icon {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background: var(--gold);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        flex-shrink: 0;
+      }
+      .cb-text {
+        font-size: 13px;
+        color: var(--gray2);
+      }
+      .cb-text strong {
+        display: block;
+        font-size: 15px;
+        color: var(--white);
+        margin-bottom: 2px;
+      }
+      .chair-quote {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 22px;
+        font-style: italic;
+        line-height: 1.7;
+        color: var(--gray2);
+        padding-left: 22px;
+        border-left: 3px solid var(--gold);
+        margin: 28px 0;
+      }
+      .chair-name {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 32px;
+        font-weight: 900;
+        color: var(--gold);
+      }
+      .chair-title {
+        font-size: 12px;
+        letter-spacing: 2.5px;
+        text-transform: uppercase;
+        color: var(--gray);
+        margin-top: 5px;
+      }
+      .chair-info {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin-top: 28px;
+      }
+      .ci-item {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-size: 14px;
+        color: var(--gray2);
+      }
+      .ci-item a {
+        color: var(--gold);
+        text-decoration: none;
+      }
+      .ci-item a:hover {
+        text-decoration: underline;
+      }
+
+      /* VALUES */
+      #values {
+        background: var(--dark3);
+      }
+      .values-header {
+        text-align: center;
+        margin-bottom: 64px;
+      }
+      .values-header .section-tag {
+        justify-content: center;
+      }
+      .values-header .section-tag::before {
+        display: none;
+      }
+      .values-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+      }
+      .vcard {
+        padding: 32px 24px;
+        background: var(--dark2);
+        border-radius: var(--radius);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        text-align: center;
+        transition: all 0.4s;
+        position: relative;
+        overflow: hidden;
+      }
+      .vcard::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: var(--gold);
+        transform: scaleX(0);
+        transition: transform 0.4s;
+      }
+      .vcard:hover::before {
+        transform: scaleX(1);
+      }
+      .vcard:hover {
+        transform: translateY(-8px);
+        border-color: rgba(245, 168, 0, 0.2);
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+      }
+      .vcard-icon {
+        font-size: 36px;
+        margin-bottom: 16px;
+      }
+      .vcard-h {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 22px;
+        font-weight: 700;
+        margin-bottom: 10px;
+      }
+      .vcard-p {
+        font-size: 13px;
+        color: var(--gray);
+        line-height: 1.7;
+      }
+
+      /* MILESTONES */
+      #milestones {
+        background: var(--dark2);
+      }
+      .mile-header {
+        text-align: center;
+        margin-bottom: 70px;
+      }
+      .mile-header .section-tag {
+        justify-content: center;
+      }
+      .mile-header .section-tag::before {
+        display: none;
+      }
+      .timeline {
+        position: relative;
+        max-width: 900px;
+        margin: 0 auto;
+      }
+      .timeline::before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 0;
+        bottom: 0;
+        width: 1px;
+        background: rgba(245, 168, 0, 0.2);
+        transform: translateX(-50%);
+      }
+      .titem {
+        display: grid;
+        grid-template-columns: 1fr 60px 1fr;
+        gap: 0;
+        margin-bottom: 50px;
+        align-items: center;
+      }
+      .titem:nth-child(even) .ti-content {
+        order: 3;
+        text-align: left;
+      }
+      .titem:nth-child(even) .ti-blank {
+        order: 1;
+      }
+      .ti-content {
+        padding: 24px;
+        background: var(--dark3);
+        border-radius: 8px;
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        transition: all 0.3s;
+      }
+      .ti-content:hover {
+        border-color: rgba(245, 168, 0, 0.2);
+        background: var(--dark4);
+      }
+      .ti-year {
+        color: var(--gold);
+        font-weight: 700;
+        font-size: 13px;
+        letter-spacing: 2px;
+        margin-bottom: 6px;
+      }
+      .ti-h {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 20px;
+        font-weight: 700;
+        margin-bottom: 6px;
+      }
+      .ti-p {
+        font-size: 13px;
+        color: var(--gray);
+        line-height: 1.6;
+      }
+      .ti-dot {
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background: var(--gold);
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+        box-shadow: 0 0 0 4px rgba(245, 168, 0, 0.2);
+      }
+      .ti-blank {
+      }
+
+      /* TEAM / APPROVALS */
+      #approvals {
+        background: var(--dark);
+      }
+      .approvals-header {
+        text-align: center;
+        margin-bottom: 60px;
+      }
+      .approvals-header .section-tag {
+        justify-content: center;
+      }
+      .approvals-header .section-tag::before {
+        display: none;
+      }
+      .approvals-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+      }
+      .acard {
+        padding: 30px;
+        background: var(--dark2);
+        border-radius: var(--radius);
+        border: 1px solid rgba(245, 168, 0, 0.1);
+        text-align: center;
+        transition: all 0.3s;
+      }
+      .acard:hover {
+        background: rgba(245, 168, 0, 0.06);
+        border-color: rgba(245, 168, 0, 0.3);
+        transform: translateY(-6px);
+      }
+      .acard-badge {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background: rgba(245, 168, 0, 0.1);
+        border: 2px solid rgba(245, 168, 0, 0.3);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Cormorant Garamond", serif;
+        font-weight: 900;
+        font-size: 16px;
+        color: var(--gold);
+        margin: 0 auto 16px;
+      }
+      .acard-h {
+        font-weight: 700;
+        font-size: 15px;
+        margin-bottom: 6px;
+      }
+      .acard-p {
+        font-size: 13px;
+        color: var(--gray);
+        line-height: 1.6;
+      }
+
+      /* STATS SECTION */
+      #about-stats {
+        background: var(--gold);
+        padding: 80px 60px;
+      }
+      .about-stats-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 40px;
+      }
+      .astat {
+        text-align: center;
+      }
+      .astat-num {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 60px;
+        font-weight: 900;
+        color: #000;
+        line-height: 1;
+      }
+      .astat-lbl {
+        font-size: 13px;
+        font-weight: 700;
+        color: rgba(0, 0, 0, 0.6);
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        margin-top: 6px;
+      }
+
+      /* FOOTER */
+      footer {
+        background: #080808;
+        border-top: 1px solid rgba(245, 168, 0, 0.12);
+        padding: 70px 60px 30px;
+      }
+      .foot-grid {
+        display: grid;
+        grid-template-columns: 2.2fr 1fr 1fr 1fr;
+        gap: 50px;
+        margin-bottom: 50px;
+      }
+      .foot-brand p {
+        font-size: 14px;
+        color: var(--gray);
+        line-height: 1.85;
+        margin: 16px 0 24px;
+      }
+      .foot-socials {
+        display: flex;
+        gap: 10px;
+      }
+      .fsoc {
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        border: 1px solid rgba(245, 168, 0, 0.3);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+        text-decoration: none;
+        color: var(--gold);
+        transition: all 0.3s;
+      }
+      .fsoc:hover {
+        background: var(--gold);
+        color: #000;
+      }
+      .foot-col h4 {
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 20px;
+      }
+      .foot-col ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 11px;
+      }
+      .foot-col ul a {
+        font-size: 14px;
+        color: var(--gray);
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+      .foot-col ul a:hover {
+        color: var(--white);
+      }
+      .foot-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.06);
+        padding-top: 24px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .foot-bottom p {
+        font-size: 13px;
+        color: var(--gray);
+      }
+      .float-call {
+        position: fixed;
+        bottom: 28px;
+        right: 28px;
+        z-index: 998;
+        background: var(--gold);
+        color: #000;
+        border: none;
+        border-radius: 50px;
+        padding: 13px 22px;
+        font-weight: 700;
+        font-size: 13px;
+        cursor: pointer;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        box-shadow: 0 8px 28px rgba(245, 168, 0, 0.5);
+        animation: fpulse 2.5s ease-in-out infinite;
+      }
+      @keyframes fpulse {
+        0%,
+        100% {
+          box-shadow: 0 8px 28px rgba(245, 168, 0, 0.5);
+        }
+        50% {
+          box-shadow: 0 12px 44px rgba(245, 168, 0, 0.75);
+        }
+      }
+      .reveal {
+        opacity: 0;
+        transform: translateY(38px);
+        transition:
+          opacity 0.75s ease,
+          transform 0.75s ease;
+      }
+      .reveal.vis {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      @media (max-width: 1024px) {
+        nav {
+          padding: 0 28px;
+        }
+        .section {
+          padding: 70px 28px;
+        }
+        .story-grid,
+        .chair-grid {
+          grid-template-columns: 1fr;
+          gap: 50px;
+        }
+        .values-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+        .approvals-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+        .about-stats-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+        .foot-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+        .timeline::before {
+          left: 20px;
+        }
+        .titem {
+          grid-template-columns: 40px 1fr;
+          gap: 10px;
+        }
+        .titem:nth-child(even) .ti-content,
+        .titem:nth-child(odd) .ti-content {
+          order: 2;
+          text-align: left;
+        }
+        .titem:nth-child(even) .ti-blank,
+        .titem:nth-child(odd) .ti-blank {
+          display: none;
+        }
+        .ti-dot {
+          margin: 0;
+        }
+      }
+      @media (max-width: 768px) {
+        .nav-links,
+        .nav-cta {
+          display: none;
+        }
+        .ham {
+          display: flex;
+        }
+        .page-hero-inner {
+          padding: 60px 28px;
+        }
+        .story-imgs img:first-child {
+          height: 200px;
+        }
+        .chair-img {
+          height: 380px;
+        }
+        .values-grid {
+          grid-template-columns: 1fr;
+        }
+        .approvals-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+        .about-stats-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+        .foot-grid {
+          grid-template-columns: 1fr;
+        }
+        .foot-bottom {
+          flex-direction: column;
+          gap: 10px;
+          text-align: center;
+        }
+      }
+      .logo-image {
+        height: 70px;
+        width: auto;
+        display: block;
+      }
+
+
+      
+      /* ── FLOATING BUTTONS STACK ── */
+.float-stack{position:fixed;bottom:74px;right:24px;z-index:998;display:flex;flex-direction:column;align-items:flex-end;gap:10px}
+.float-btn{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;transition:transform .25s,box-shadow .25s;flex-shrink:0;border:none;cursor:pointer}
+.float-btn:hover{transform:scale(1.1)}
+.float-btn svg{width:26px;height:26px;flex-shrink:0}
+.float-insta{background:linear-gradient(135deg,#f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);box-shadow:0 6px 22px rgba(220,39,67,.5)}
+.float-insta:hover{box-shadow:0 10px 32px rgba(220,39,67,.7)}
+.float-wa{background:#25d366;box-shadow:0 6px 22px rgba(37,211,102,.5)}
+.float-wa:hover{box-shadow:0 10px 32px rgba(37,211,102,.7)}
+.float-call{background:#F5A800;color:#000;border:none;border-radius:50px;padding:13px 20px;font-weight:700;font-size:13px;cursor:pointer;text-decoration:none;display:flex;align-items:center;gap:8px;box-shadow:0 6px 22px rgba(245,168,0,.5);transition:all .25s;white-space:nowrap;animation:fpulse 2.5s ease-in-out infinite}
+.float-call:hover{transform:scale(1.05)}
+@keyframes fpulse{0%,100%{box-shadow:0 6px 22px rgba(245,168,0,.5)}50%{box-shadow:0 10px 36px rgba(245,168,0,.75)}}
+.float-btn-wrap{position:relative;display:flex;align-items:center;justify-content:flex-end}
+.float-btn-wrap .ftip{position:absolute;right:62px;background:rgba(20,20,20,.92);color:#fff;font-size:12px;font-weight:600;padding:5px 12px;border-radius:6px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .2s}
+.float-btn-wrap:hover .ftip{opacity:1}
+@media(max-width:480px){.float-call{padding:11px 16px;font-size:12px}.float-btn{width:46px;height:46px}.float-btn svg{width:22px;height:22px}}
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a href="index.html" class="nav-logo">
+        <img
+          src="images/clear.png"
+          alt="Megha Mythri Projects Logo"
+          class="logo-image"
+        />
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <button class="nav-cta" onclick="location.href = 'contact.html'">
+        Enquire Now
+      </button>
+      <button class="ham" onclick="toggleNav()">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+
+    <!-- PAGE HERO -->
+    <div class="page-hero">
+      <div class="page-hero-inner">
+        <div class="breadcrumb">
+          <a href="index.html">Home</a><span>/</span><span>About Us</span>
+        </div>
+        <h1>About <span class="gold">Megha Mythri</span><br />Projects LLP</h1>
+        <p>
+          Building trust, delivering value, and creating communities across
+          Hyderabad's most promising real estate corridors since our inception.
+        </p>
+      </div>
+    </div>
+
+    <!-- STORY -->
+    <section id="story" class="section">
+      <div class="story-grid">
+        <div class="story-imgs reveal">
+          <img
+            src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80"
+            alt="MMP Story"
+            style="height: 300px; grid-column: 1/-1"
+          />
+          <img
+            src="https://img.freepik.com/premium-photo/indian-family-gathering-celebration-festival-lifestyle_1000823-199207.jpg"
+            alt="MMP Property"
+            style="height: 180px"
+          />
+          <div class="story-stat-box">
+            <div class="ssb-num">10+</div>
+            <div class="ssb-lbl">Projects<br />Completed</div>
+          </div>
+        </div>
+        <div class="reveal" style="transition-delay: 0.15s">
+          <div class="section-tag">Our Story</div>
+          <h2 class="section-h">Built on Vision,<br />Grounded in Trust</h2>
+          <div class="story-divider"></div>
+          <p class="section-p">
+            Megha Mythri Projects LLP was founded with a singular vision — to
+            make premium, legally sound real estate accessible to every aspiring
+            homeowner and investor in Hyderabad.
+          </p>
+          <p class="section-p" style="margin-top: 16px">
+            Under the leadership of Chairman & CEO M. Prabhakar, we have grown
+            from a passionate startup to one of Hyderabad's most trusted real
+            estate brands. Our projects span Shadnagar, Yacharam, Bibinagar,
+            Adibatla, and beyond — each carrying full HMDA, DTCP, TG RERA or
+            FCDA approvals.
+          </p>
+          <p class="section-p" style="margin-top: 16px">
+            We believe real estate is not just a transaction — it's a life
+            decision. That's why we walk every client through the entire
+            journey, from plot selection to registration, with complete
+            transparency and personal care.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHAIRMAN -->
+    <section id="chairman" class="section">
+      <div class="chair-grid">
+        <div class="chair-img-wrap reveal">
+          <div class="chair-frame"></div>
+          <img
+            src="images/WhatsApp Image 2026-06-05 at 4.00.03 PM.jpeg"
+            alt="M. Prabhakar, Chairman"
+            class="chair-img"
+          />
+          <div class="chair-badge">
+            <div class="cb-icon">🏆</div>
+            <div class="cb-text">
+              <strong>M. Prabhakar</strong>Chairman & CEO, MMP LLP
+            </div>
+          </div>
+        </div>
+        <div class="reveal" style="transition-delay: 0.15s">
+          <div class="section-tag">Our Leader</div>
+          <h2 class="section-h">Meet the Chairman<br />& CEO</h2>
+          <blockquote class="chair-quote">
+            "We don't just sell land — we build futures. Every plot we develop
+            is a promise of quality, transparency, and lasting value."
+          </blockquote>
+          <div class="chair-name">M. Prabhakar</div>
+          <div class="chair-title">
+            Chairman & CEO — Megha Mythri Projects LLP
+          </div>
+          <div class="chair-info">
+            <div class="ci-item">
+              📞 <a href="tel:+917569289568">+91 75692 89568</a>
+            </div>
+            <div class="ci-item">
+              📞 <a href="tel:+919398366812">+91 93983 66812</a>
+            </div>
+
+            <div class="ci-item">
+              ✉️
+              <a href="mailto:meghamythriprojects@gmail.com"
+                >meghamythriprojects@gmail.com</a
+              >
+            </div>
+            <div class="ci-item">
+              📘
+              <a
+                href="https://www.facebook.com/profile.php?id=61583844179462"
+                target="_blank"
+                >@MEGHA_MYTHRI_PROJECTS</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+<!-- ── FLOATING BUTTONS STACK ── -->
+<div class="float-stack">
+
+  <!-- Instagram -->
+  <div class="float-btn-wrap">
+    <span class="ftip">Instagram</span>
+    <a href="https://www.instagram.com/megha_mythri_projects?igsh=MnQwcXczbWJqa250" target="_blank" class="float-btn float-insta" aria-label="Instagram">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="2" y="2" width="20" height="20" rx="5"/>
+        <circle cx="12" cy="12" r="4"/>
+        <circle cx="17.5" cy="6.5" r="1" fill="#fff" stroke="none"/>
+      </svg>
+    </a>
+  </div>
+
+  <!-- WhatsApp -->
+  <div class="float-btn-wrap">
+    <span class="ftip">WhatsApp</span>
+    <a href="https://wa.me/917569289568" target="_blank" class="float-btn float-wa" aria-label="WhatsApp">
+      <svg viewBox="0 0 24 24" fill="#fff">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+      </svg>
+    </a>
+  </div>
+
+  <!-- Call Now -->
+  <div class="float-btn-wrap">
+    <span class="ftip">Call Now</span>
+    <a href="tel:+917569289568" class="float-call">📞 Call Now</a>
+  </div>
+
+</div>
+    <!-- VALUES -->
+    <section id="values" class="section">
+      <div class="values-header reveal">
+        <div class="section-tag">Our Foundation</div>
+        <h2 class="section-h">Our Core Values</h2>
+        <p
+          style="
+            font-size: 16px;
+            color: var(--gray);
+            max-width: 520px;
+            margin: 0 auto;
+            line-height: 1.8;
+          "
+        >
+          These principles guide every decision we make and every project we
+          deliver.
+        </p>
+      </div>
+      <div class="values-grid">
+        <div class="vcard reveal">
+          <div class="vcard-icon">🏛️</div>
+          <div class="vcard-h">Legal Integrity</div>
+          <div class="vcard-p">
+            Every project carries full government approvals — HMDA, DTCP, TG
+            RERA, FCDA — with 100% clear titles.
+          </div>
+        </div>
+        <div class="vcard reveal" style="transition-delay: 0.08s">
+          <div class="vcard-icon">🔍</div>
+          <div class="vcard-h">Transparency</div>
+          <div class="vcard-p">
+            No hidden costs. No misleading claims. What you see is exactly what
+            you get — always honest.
+          </div>
+        </div>
+        <div class="vcard reveal" style="transition-delay: 0.16s">
+          <div class="vcard-icon">🤝</div>
+          <div class="vcard-h">Customer First</div>
+          <div class="vcard-p">
+            We walk every client through every step — from site visit to
+            registration — with personal attention.
+          </div>
+        </div>
+        <div class="vcard reveal" style="transition-delay: 0.24s">
+          <div class="vcard-icon">📈</div>
+          <div class="vcard-h">Value Creation</div>
+          <div class="vcard-p">
+            We select locations with strong appreciation potential so your
+            investment grows year after year.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MILESTONES -->
+    <section id="milestones" class="section">
+      <div class="mile-header reveal">
+        <div class="section-tag">Our Journey</div>
+        <h2 class="section-h">Key Milestones</h2>
+      </div>
+      <div class="timeline">
+        <div class="titem reveal">
+          <div class="ti-content">
+            <div class="ti-year">2017</div>
+            <div class="ti-h">Foundation</div>
+            <div class="ti-p">
+              Megha Mythri Projects LLP founded by M. Prabhakar with a vision to
+              deliver transparent real estate.
+            </div>
+          </div>
+          <div class="ti-dot"></div>
+          <div class="ti-blank"></div>
+        </div>
+        <div class="titem reveal">
+          <div class="ti-blank"></div>
+          <div class="ti-dot"></div>
+          <div class="ti-content">
+            <div class="ti-year">2019</div>
+            <div class="ti-h">First HMDA Project</div>
+            <div class="ti-p">
+              Launched Shadnagar County — our first fully HMDA & TG RERA
+              approved villa plot community.
+            </div>
+          </div>
+        </div>
+        <div class="titem reveal">
+          <div class="ti-content">
+            <div class="ti-year">2020</div>
+            <div class="ti-h">Expanding Horizons</div>
+            <div class="ti-p">
+              Launched RRR Farms, Nandini Green City and Rajadhani 4th City
+              simultaneously — 3 projects in one year.
+            </div>
+          </div>
+          <div class="ti-dot"></div>
+          <div class="ti-blank"></div>
+        </div>
+        <div class="titem reveal">
+          <div class="ti-blank"></div>
+          <div class="ti-dot"></div>
+          <div class="ti-content">
+            <div class="ti-year">2022</div>
+            <div class="ti-h">500+ Happy Families</div>
+            <div class="ti-p">
+              Crossed 500 satisfied customers milestone. Launched Adibatla Villa
+              Plots in the IT corridor.
+            </div>
+          </div>
+        </div>
+        <div class="titem reveal">
+          <div class="ti-content">
+            <div class="ti-year">2024</div>
+            <div class="ti-h">10+ Active Projects</div>
+            <div class="ti-p">
+              10+ projects running across Hyderabad. Launched My Space II, Divi
+              Heights and Tech Valley.
+            </div>
+          </div>
+          <div class="ti-dot"></div>
+          <div class="ti-blank"></div>
+        </div>
+        <div class="titem reveal">
+          <div class="ti-blank"></div>
+          <div class="ti-dot"></div>
+          <div class="ti-content">
+            <div class="ti-year">2025</div>
+            <div class="ti-h">Future Ready</div>
+            <div class="ti-p">
+              Meerkhanpet upcoming DTCP project announced. Continuing to build
+              Hyderabad's premier communities.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- APPROVALS -->
+    <section id="approvals" class="section">
+      <div class="approvals-header reveal">
+        <div class="section-tag">Legal Compliance</div>
+        <h2 class="section-h">Our Approvals & Certifications</h2>
+        <p
+          style="
+            font-size: 16px;
+            color: var(--gray);
+            max-width: 520px;
+            margin: 0 auto;
+            line-height: 1.8;
+          "
+        >
+          Every project we deliver carries the highest legal certifications —
+          your investment is always protected.
+        </p>
+      </div>
+      <div class="approvals-grid">
+        <div class="acard reveal">
+          <div class="acard-badge">HMDA</div>
+          <div class="acard-h">HMDA Approved</div>
+          <div class="acard-p">
+            Hyderabad Metropolitan Development Authority certified layouts with
+            all infrastructure standards.
+          </div>
+        </div>
+        <div class="acard reveal" style="transition-delay: 0.1s">
+          <div class="acard-badge">RERA</div>
+          <div class="acard-h">TG RERA Certified</div>
+          <div class="acard-p">
+            Telangana Real Estate Regulatory Authority registered projects
+            ensuring full buyer protection.
+          </div>
+        </div>
+        <div class="acard reveal" style="transition-delay: 0.2s">
+          <div class="acard-badge">DTCP</div>
+          <div class="acard-h">DTCP Approved</div>
+          <div class="acard-p">
+            Directorate of Town & Country Planning approved open plots for
+            lawful development.
+          </div>
+        </div>
+        <div class="acard reveal" style="transition-delay: 0.3s">
+          <div class="acard-badge">FCDA</div>
+          <div class="acard-h">FCDA Approved</div>
+          <div class="acard-p">
+            Future Capital Development Authority certified projects in
+            Yacharam's high-growth zones.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <section id="about-stats">
+      <div class="about-stats-grid">
+        <div class="astat reveal">
+          <div class="astat-num">10+</div>
+          <div class="astat-lbl">Projects</div>
+        </div>
+        <div class="astat reveal">
+          <div class="astat-num">500+</div>
+          <div class="astat-lbl">Happy Families</div>
+        </div>
+        <div class="astat reveal">
+          <div class="astat-num">7+</div>
+          <div class="astat-lbl">Years Active</div>
+        </div>
+        <div class="astat reveal">
+          <div class="astat-num">100%</div>
+          <div class="astat-lbl">RERA Approved</div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="foot-grid">
+        <div class="foot-brand">
+          <a href="index.html" class="nav-logo"
+            ><div class="logo-badge">MMP</div>
+            <div class="logo-text">
+              <span class="t1">Megha Mythri Projects</span
+              ><span class="t2">Premium Realty · LLP</span>
+            </div></a
+          >
+          <p>
+            Hyderabad's trusted real estate partner. HMDA, DTCP, TG RERA & FCDA
+            approved plots, villa communities, and farm lands across Telangana's
+            growth corridors.
+          </p>
+          <div class="foot-socials">
+            <a
+              href="https://www.facebook.com/profile.php?id=61583844179462"
+              target="_blank"
+              class="fsoc"
+              >f</a
+            ><a href="tel:+917569289568" class="fsoc">📞</a
+            ><a href="mailto:meghamythriprojects@gmail.com" class="fsoc">✉</a>
+          </div>
+        </div>
+        <div class="foot-col">
+          <h4>Pages</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="foot-col">
+          <h4>Projects</h4>
+          <ul>
+            <li><a href="projects.html">Shadnagar County</a></li>
+            <li><a href="projects.html">RRR Farms</a></li>
+            <li><a href="projects.html">Adibatla Villas</a></li>
+            <li><a href="projects.html">Nandini Green City</a></li>
+          </ul>
+        </div>
+        <div class="foot-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="tel:+917569289568">+91 75692 89568</a></li>
+            <li><a href="tel:+919398366812">+91 93983 66812</a></li>
+            <li><a href="mailto:meghamythriprojects@gmail.com">Email Us</a></li>
+            <li><a href="contact.html">Uppal Nagole, HYD</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <p>© 2025 Megha Mythri Projects LLP. All rights reserved.</p>
+        <p style="color: var(--gold)">Chairman: M. Prabhakar — CEO</p>
+      </div>
+    </footer>
+    <a href="tel:+917569289568" class="float-call">📞 Call Now</a>
+    <script>
+      window.addEventListener("scroll", () =>
+        document
+          .querySelector("nav")
+          .classList.toggle("scrolled", scrollY > 80),
+      );
+      const obs = new IntersectionObserver(
+        (es) =>
+          es.forEach((e) => {
+            if (e.isIntersecting) e.target.classList.add("vis");
+          }),
+        { threshold: 0.1 },
+      );
+      document.querySelectorAll(".reveal").forEach((el) => obs.observe(el));
+      function toggleNav() {
+        const l = document.querySelector(".nav-links");
+        l.style.display = l.style.display === "flex" ? "none" : "flex";
+        if (l.style.display === "flex")
+          l.style.cssText =
+            "display:flex;flex-direction:column;position:fixed;top:60px;left:0;right:0;background:#111;padding:20px 28px;gap:20px;z-index:998;border-bottom:1px solid rgba(245,168,0,.15)";
+      }
+    </script>
+  </body>
+</html>
